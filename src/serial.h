@@ -5,6 +5,7 @@
 #include "serialib.h"
 
 extern serialib cameraSerial;
+extern bool serialInitialized;
 
 // Initialize serial connection
 bool initializeSerial();
@@ -20,5 +21,6 @@ void zoomIn();
 void zoomOut();
 void sendICRCommand(bool enable);
 void sendIRCorrectionCommand(bool enable);
+void sendStabilizerCommand(bool enable);
 
 #endif // SERIAL_H

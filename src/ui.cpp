@@ -82,13 +82,13 @@ void mouseCallback(int event, int x, int y, int flags, void* userdata) {
             return;
         }
         
-        // Check for IR Correction button click
-        if (irCorrectionButtonRect.contains(Point(x, y))) {
-            irCorrectionEnabled = !irCorrectionEnabled;
-            sendIRCorrectionCommand(irCorrectionEnabled);
+        // Check for Stabilizer button click
+        if (stabilizerButtonRect.contains(Point(x, y))) {
+            stabilizerEnabled = !stabilizerEnabled;
+            sendStabilizerCommand(stabilizerEnabled);
             return;
         }
-        
+
         if (showExportDialog) {
             // File checkboxes handling
             bool fileAreaClicked = false;
@@ -257,26 +257,35 @@ void mouseCallback(int event, int x, int y, int flags, void* userdata) {
 void initIR(int x, int y, int width, int height) {
     // Position buttons in the panel
     int buttonY = y + 15;  
-    int buttonWidth = (width - 30) / 2;  // Half of available width minus padding
+    int buttonHeight = 30;
+    int buttonSpacing = 40;
     
-    // Position ICR button on left side
-    icrButtonRect = Rect(x + 10, buttonY, buttonWidth, 30);
+    // Divide the width for two buttons with some spacing
+    int buttonWidth = (width - 30) / 2;
     
-    // IR Correction button (beside ICR Mode button)
-    irCorrectionButtonRect = Rect(x + 20 + buttonWidth, buttonY, buttonWidth, 30);
+    // Position ICR button on the left
+    icrButtonRect = Rect(x + 10, buttonY, buttonWidth, buttonHeight);
+    
+    // Position Stabilizer button on the right
+    stabilizerButtonRect = Rect(x + 10 + buttonWidth + 10, buttonY, buttonWidth, buttonHeight);
 }
 
-// Modify the drawIR function to draw ICR controls
+// Modify the drawIR function to draw ICR and Stabilizer controls
 void drawIR(Mat& frame, bool bgActive) {
-    // Don't draw ICR controls if export dialog is showing
+    // Don't draw controls if export dialog is showing
     if (showExportDialog) {
         return;
     }
     
-    // Draw background panel for ICR controls
-    Rect controlsRect(icrButtonRect.x - 10, icrButtonRect.y - 15, 
-                     irCorrectionButtonRect.x + irCorrectionButtonRect.width + 10 - icrButtonRect.x + 10, 
-                     icrButtonRect.height + 30);
+    // Calculate control panel bounds to encompass both buttons
+    int panelX = min(icrButtonRect.x, stabilizerButtonRect.x) - 10;
+    int panelWidth = max(icrButtonRect.x + icrButtonRect.width, 
+                         stabilizerButtonRect.x + stabilizerButtonRect.width) - panelX + 10;
+    int panelY = icrButtonRect.y - 15;
+    int panelHeight = icrButtonRect.height + 30;
+    
+    // Draw background panel for controls
+    Rect controlsRect(panelX, panelY, panelWidth, panelHeight);
                      
     rectangle(frame, controlsRect, Scalar(30, 40, 30, 180), -1);  
     rectangle(frame, controlsRect, Scalar(100, 150, 100), 2);
@@ -289,12 +298,12 @@ void drawIR(Mat& frame, bool bgActive) {
             Point(icrButtonRect.x + 10, icrButtonRect.y + 20),
             FONT_HERSHEY_SIMPLEX, 0.5, TEXT_COLOR, 1);
     
-    // Draw IR Correction button
-    Scalar irCorrectionColor = irCorrectionEnabled ? BUTTON_COLOR : Scalar(100, 100, 100);
-    rectangle(frame, irCorrectionButtonRect, irCorrectionColor, -1);
-    rectangle(frame, irCorrectionButtonRect, HIGHLIGHT_COLOR, 1);
-    putText(frame, "IR Correction: " + string(irCorrectionEnabled ? "ON" : "OFF"), 
-            Point(irCorrectionButtonRect.x + 10, irCorrectionButtonRect.y + 20),
+    // Draw Stabilizer button
+    Scalar stabilizerButtonColor = stabilizerEnabled ? BUTTON_COLOR : Scalar(100, 100, 100);
+    rectangle(frame, stabilizerButtonRect, stabilizerButtonColor, -1);
+    rectangle(frame, stabilizerButtonRect, HIGHLIGHT_COLOR, 1);
+    putText(frame, "Stabilizer: " + string(stabilizerEnabled ? "ON" : "OFF"), 
+            Point(stabilizerButtonRect.x + 10, stabilizerButtonRect.y + 20),
             FONT_HERSHEY_SIMPLEX, 0.5, TEXT_COLOR, 1);
 }
 

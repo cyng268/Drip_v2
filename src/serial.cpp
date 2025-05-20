@@ -129,6 +129,33 @@ void sendIRCorrectionCommand(bool enable) {
     setLogMessage(std::string("IR Correction: ") + (enable ? "ON" : "OFF"));
 }
 
+void sendStabilizerCommand(bool enable) {
+    if (!serialInitialized) {
+        if (!initializeSerial()) {
+            setLogMessage("Serial error");
+            return;
+        }
+    }
+
+    // Command to enable Stabilizer: 81 01 04 34 02 FF
+    // Command to disable Stabilizer: 81 01 04 34 03 FF
+    std::string cmdStr = enable ? "8101043402FF" : "8101043403FF";
+
+    std::cout << "Sending Stabilizer command: " << cmdStr << " (Enable: " << enable << ")" << std::endl;
+
+    // Convert hex string to bytes and send
+    int len = cmdStr.length() / 2;
+    unsigned char buffer[len];
+
+    for (int i = 0; i < len; i++) {
+        char byteStr[3] = {cmdStr[i*2], cmdStr[i*2+1], 0};
+        buffer[i] = (unsigned char)strtol(byteStr, NULL, 16);
+    }
+
+    cameraSerial.writeBytes(buffer, len);
+    setLogMessage(std::string("Stabilizer: ") + (enable ? "ON" : "OFF"));
+}
+
 void zoomIn() {
     appConfig.loadConfig();
     int ZOOM_LEVEL = appConfig.getInt("ZOOM_LEVEL", 64);

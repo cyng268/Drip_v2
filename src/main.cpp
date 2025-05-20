@@ -74,9 +74,9 @@ int ZOOM_DELAY_MS = 100;
 
 // New control variables for ICR and IR Correction
 bool icrModeEnabled = false;
-bool irCorrectionEnabled = false;
 Rect icrButtonRect;
-Rect irCorrectionButtonRect;
+bool stabilizerEnabled = false;
+Rect stabilizerButtonRect;
 
 // Display options
 bool showFPS = false;
