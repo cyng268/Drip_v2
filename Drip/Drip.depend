@@ -808,11 +808,11 @@
 1747619979 /home/kng/Drip_v2/src/recording.h
 	"common.h"
 
-1747619979 source:/home/kng/Drip_v2/src/serial.cpp
+1747622660 source:/home/kng/Drip_v2/src/serial.cpp
 	"serial.h"
 	"config.h"
 
-1747619979 /home/kng/Drip_v2/src/serial.h
+1747622660 /home/kng/Drip_v2/src/serial.h
 	"common.h"
 	"serialib.h"
 
@@ -837,7 +837,7 @@
 1747619979 source:/home/kng/Drip_v2/src/ui_helpers.cpp
 	"ui_helpers.h"
 
-1747621047 source:/home/kng/Drip_v2/src/main.cpp
+1747622659 source:/home/kng/Drip_v2/src/main.cpp
 	"common.h"
 	"camera.h"
 	"ui.h"
@@ -848,13 +848,13 @@
 	"ui_helpers.h"
 	"navigation_bar.h"
 
-1747619979 /home/kng/Drip_v2/src/ui.h
+1747622661 /home/kng/Drip_v2/src/ui.h
 	"common.h"
 	"export_dialog.h"
 	"ui_helpers.h"
 	"navigation_bar.h"
 
-1746585460 source:/home/kng/Drip_v2/src/ui.cpp
+1747622658 source:/home/kng/Drip_v2/src/ui.cpp
 	"ui.h"
 	"serial.h"
 	"recording.h"
