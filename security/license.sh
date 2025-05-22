@@ -1,0 +1,9 @@
+mkdir -p /opt/Drip
+mv ./license.dat /opt/Drip/license.dat
+mv ./public_key.pem /opt/Drip/public_key.pem
+chown root /opt/Drip/
+chmod 700 /opt/Drip/
+chown root /opt/Drip/license.dat
+chmod 600 /opt/Drip/license.dat
+chown root /opt/Drip/public_key.pem
+chmod 600 /opt/Drip/public_key.pem

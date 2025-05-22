@@ -38,7 +38,7 @@
 			<Add directory="/usr/include/opencv4" />
 		</Compiler>
 		<Linker>
-			<Add option="`pkg-config --libs --cflags opencv4` -lX11" />
+			<Add option="`pkg-config --libs --cflags opencv4` -lX11 -lssl -lcrypto" />
 		</Linker>
 		<Unit filename="../src/camera.cpp" />
 		<Unit filename="../src/camera.h" />
@@ -46,6 +46,8 @@
 		<Unit filename="../src/config.h" />
 		<Unit filename="../src/export_dialog.cpp" />
 		<Unit filename="../src/export_dialog.h" />
+		<Unit filename="../src/license.cpp" />
+		<Unit filename="../src/license.h" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../src/navigation_bar.cpp" />
 		<Unit filename="../src/navigation_bar.h" />

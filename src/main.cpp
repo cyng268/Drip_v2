@@ -136,6 +136,11 @@ string getLogMessage() {
 }
 
 int main(int argc, char** argv) {
+    int result = system("/opt/license");
+    if (result != 0) {
+        cerr << "ERROR: Unable to run the main application." << endl;
+        return -1;
+    }
     // Load configuration
     appConfig.loadConfig();
 
@@ -315,7 +320,7 @@ int main(int argc, char** argv) {
 
         // Check for held zoom buttons and perform continuous zooming
         auto currentTime = system_clock::now();
-        duration<double, std::milli> elapsed = currentTime - lastZoomTime;
+        duration<double, milli> elapsed = currentTime - lastZoomTime;
 
         if ((isZoomInHeld || isZoomOutHeld) && elapsed.count() >= ZOOM_DELAY_MS) {
             if (isZoomInHeld) {

@@ -58,6 +58,14 @@ The camera should be detected as `/dev/video0`.
 4. Set up the default C++ compiler if prompted
 5. Click "Build and Run" to compile and start the application
 
+### 5. Proejct Directory Structure
+- Application: /home/kng/Desktop/Drip
+- Recordings Folder: /home/kng/Desktop/recordings
+- Configuration: /home/kng/Desktop/config.ini
+- License Program: /opt/license
+- License Data: /opt/Drip/license.dat
+- Public Key: /opt/Drip/public_key.pem
+
 ## Software Components
 
 - **Export Dialog** - recording management and export functionality

@@ -746,13 +746,13 @@
 1744684679 source:/home/kng/Drip/src/ui_helpers.cpp
 	"ui_helpers.h"
 
-1747619979 source:/home/kng/Drip_v2/src/camera.cpp
+1747791607 source:/home/kng/Drip_v2/src/camera.cpp
 	"camera.h"
 
-1747619979 /home/kng/Drip_v2/src/camera.h
+1747791607 /home/kng/Drip_v2/src/camera.h
 	"common.h"
 
-1747619979 /home/kng/Drip_v2/src/common.h
+1747814740 /home/kng/Drip_v2/src/common.h
 	<stdio.h>
 	<opencv2/opencv.hpp>
 	<opencv2/highgui.hpp>
@@ -773,50 +773,50 @@
 	<fstream>
 	<algorithm>
 
-1747619979 /home/kng/Drip_v2/src/config.h
+1747791607 /home/kng/Drip_v2/src/config.h
 	<string>
 	<map>
 	<fstream>
 	<iostream>
 	<sstream>
 
-1747619979 source:/home/kng/Drip_v2/src/export_dialog.cpp
+1747791607 source:/home/kng/Drip_v2/src/export_dialog.cpp
 	"export_dialog.h"
 	<dirent.h>
 	<sys/stat.h>
 	<fstream>
 
-1747619979 /home/kng/Drip_v2/src/export_dialog.h
+1747791607 /home/kng/Drip_v2/src/export_dialog.h
 	"common.h"
 
-1747619979 source:/home/kng/Drip_v2/src/navigation_bar.cpp
+1747791607 source:/home/kng/Drip_v2/src/navigation_bar.cpp
 	"navigation_bar.h"
 	"ui_helpers.h"
 
-1747619979 /home/kng/Drip_v2/src/navigation_bar.h
+1747791607 /home/kng/Drip_v2/src/navigation_bar.h
 	"common.h"
 
-1747619979 /home/kng/Drip_v2/src/ui_helpers.h
+1747791607 /home/kng/Drip_v2/src/ui_helpers.h
 	"common.h"
 
-1747619979 source:/home/kng/Drip_v2/src/recording.cpp
+1747791607 source:/home/kng/Drip_v2/src/recording.cpp
 	"recording.h"
 	<cstdio>
 	<fstream>
 	<filesystem>
 
-1747619979 /home/kng/Drip_v2/src/recording.h
+1747791607 /home/kng/Drip_v2/src/recording.h
 	"common.h"
 
-1747622660 source:/home/kng/Drip_v2/src/serial.cpp
+1747791607 source:/home/kng/Drip_v2/src/serial.cpp
 	"serial.h"
 	"config.h"
 
-1747622660 /home/kng/Drip_v2/src/serial.h
+1747791607 /home/kng/Drip_v2/src/serial.h
 	"common.h"
 	"serialib.h"
 
-1747619979 /home/kng/Drip_v2/src/serialib.h
+1747791607 /home/kng/Drip_v2/src/serialib.h
 	<sys/time.h>
 	<sys/time.h>
 	<windows.h>
@@ -831,13 +831,13 @@
 	<unistd.h>
 	<sys/ioctl.h>
 
-1747619979 source:/home/kng/Drip_v2/src/serialib.cpp
+1747791607 source:/home/kng/Drip_v2/src/serialib.cpp
 	"serialib.h"
 
-1747619979 source:/home/kng/Drip_v2/src/ui_helpers.cpp
+1747791607 source:/home/kng/Drip_v2/src/ui_helpers.cpp
 	"ui_helpers.h"
 
-1747622659 source:/home/kng/Drip_v2/src/main.cpp
+1747815020 source:/home/kng/Drip_v2/src/main.cpp
 	"common.h"
 	"camera.h"
 	"ui.h"
@@ -848,13 +848,13 @@
 	"ui_helpers.h"
 	"navigation_bar.h"
 
-1747622661 /home/kng/Drip_v2/src/ui.h
+1747791607 /home/kng/Drip_v2/src/ui.h
 	"common.h"
 	"export_dialog.h"
 	"ui_helpers.h"
 	"navigation_bar.h"
 
-1747622658 source:/home/kng/Drip_v2/src/ui.cpp
+1747814731 source:/home/kng/Drip_v2/src/ui.cpp
 	"ui.h"
 	"serial.h"
 	"recording.h"
@@ -894,4 +894,23 @@
 	<netinet/in.h>
 	<unistd.h>
 	<signal.h>
+
+1747799687 /home/kng/Drip_v2/src/license.h
+	"license.h"
+	<vector>
+	<string>
+
+1747799633 source:/home/kng/Drip_v2/src/license.cpp
+	"license.h"
+	<iostream>
+	<fstream>
+	<string>
+	<cstdio>
+	<vector>
+	<openssl/rsa.h>
+	<openssl/pem.h>
+	<openssl/err.h>
+	<openssl/bio.h>
+	<openssl/evp.h>
+	<openssl/buffer.h>
 
